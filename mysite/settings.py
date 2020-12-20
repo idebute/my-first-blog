@@ -120,3 +120,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'static'
+
+
+# Login
+
+LOGIN_REDIRECT_URL = '/'  # redirect a successful login to the top-level index (the homepage)

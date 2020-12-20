@@ -16,8 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.urls import include
+from django.contrib.auth import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('blog.urls')),  # чтобы 'http://127.0.0.1:8000/' возвращал домашнюю страничку нашего блога со списком записей в нём
+    path('accounts/login/', views.LoginView.as_view(), name='login'),  # форма авторизации
+    path('accounts/logout/', views.LogoutView.as_view(next_page='/'), name='logout'),
 ]
